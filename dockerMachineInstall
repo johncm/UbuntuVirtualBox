@@ -1,0 +1,6 @@
+#/bin/bash
+# Download docker-machine
+export DM=/usr/local/bin/docker-machine
+curl -L https://github.com/docker/machine/releases/download/v0.4.0/docker-machine_linux-amd64 > ${DM}
+# Apply permissions
+chmod +x ${DM}
