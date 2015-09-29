@@ -1,0 +1,2 @@
+#!/bin/bash
+docker-machine create -d virtualbox --virtualbox-boot2docker-url https://github.com/rancher/os/releases/download/v0.3.2/machine-rancheros.iso MyRancherOSMachine
