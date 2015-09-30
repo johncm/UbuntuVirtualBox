@@ -1,2 +1,14 @@
 #!/bin/bash
-docker run -p 4440:4440 -e SERVER_URL=http://192.168.1.104:4440 -t jordan/rundeck:latest
+# /etc/rundeck
+# /var/rundeck - policy and resource files
+# /var/lib/rundeck(/.ssh) - contains web app, not rec. as a volume: contains SSH Key.
+# /var/lib/mysql - SQL database
+# /var/log/rundeck
+docker run \
+  --name RunDeck \
+  -p 4440:4440 \
+  -e SERVER_URL=http://192.168.1.104:4440 \
+  -v /var/rundeck:/var/rundeck \
+  -v /var/lib/mysql:/var/lib/mysql \
+  -v /var/log/rundeck:/var/log/rundeck \
+  -t jordan/rundeck:latest
